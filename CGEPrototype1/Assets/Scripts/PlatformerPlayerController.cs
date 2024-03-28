@@ -14,6 +14,8 @@ public class PlatformerPlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontalInput;
 
+    private Animator animator;
+
     // audio clip to hold jump sound
     public AudioClip jumpSound;
 
@@ -25,8 +27,8 @@ public class PlatformerPlayerController : MonoBehaviour
     {
         // Get the Rigidbody2D component attached to the GameObject
         rb = GetComponent<Rigidbody2D>();
-
         playerAudio = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
 
         if (groundCheck == null)
         {
@@ -55,8 +57,17 @@ public class PlatformerPlayerController : MonoBehaviour
         // move the player using Rigidbody2D in FixedUpdate
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
 
+        // set animator parameter xVelocityAbs to absolute of x velocity
+        animator.SetFloat("xVelocityAbs", Mathf.Abs(rb.velocity.x));
+
+        // set animator parameter yVelocity to y velocity
+        animator.SetFloat("yVelocity", rb.velocity.y);
+
         // check if player is grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        // set animator parameter onGround to isGrounder
+        animator.SetBool("onGround", isGrounded);
 
         // Ensure the player is facing the direction of movement
         if (horizontalInput > 0)

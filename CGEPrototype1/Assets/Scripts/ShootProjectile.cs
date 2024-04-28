@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShootProjectile : MonoBehaviour
 {
+    public AudioSource LaserShot;
+
     // The projectile prefab to be spawned
     public GameObject projectilePrefab;
 
@@ -29,6 +31,8 @@ public class ShootProjectile : MonoBehaviour
         GameObject firedProjectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
 
         Debug.Log(firedProjectile.gameObject.name);
+
+        LaserShot.Play();
 
         // destroy the project after 3 seconds
         // Destroy(firedProjectile, 3f);

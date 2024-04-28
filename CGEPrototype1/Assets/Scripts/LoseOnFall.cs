@@ -8,6 +8,13 @@ public class LoseOnFall : MonoBehaviour
     // Set this in inspector
     public float lowestY;
 
+    public PlayerHealth playerHealth;
+
+    private void Start()
+    {
+        playerHealth = GetComponent<PlayerHealth>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -16,6 +23,8 @@ public class LoseOnFall : MonoBehaviour
         {
             // trigger player loss
             ScoreManager.gameOver = true;
+
+            playerHealth.Die();
         }
     }
 }

@@ -78,5 +78,11 @@ public class PlatformerPlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 180, 0); // facing left
         }
+
+        if (!PlayerHealth.hitRecently)
+        {
+            // move the player using Rigidbody2D in FixedUpdate
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        }
     }
 }

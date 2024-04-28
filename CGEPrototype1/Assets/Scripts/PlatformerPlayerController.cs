@@ -54,8 +54,11 @@ public class PlatformerPlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // move the player using Rigidbody2D in FixedUpdate
-        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        if (!PlayerHealth.hitRecently)
+        {
+            // move the player using Rigidbody2D in FixedUpdate
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        }
 
         // set animator parameter xVelocityAbs to absolute of x velocity
         animator.SetFloat("xVelocityAbs", Mathf.Abs(rb.velocity.x));
@@ -77,12 +80,6 @@ public class PlatformerPlayerController : MonoBehaviour
         else if (horizontalInput < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0); // facing left
-        }
-
-        if (!PlayerHealth.hitRecently)
-        {
-            // move the player using Rigidbody2D in FixedUpdate
-            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         }
     }
 }

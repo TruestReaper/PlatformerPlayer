@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (!gameOver)
         {
-            textbox.text = "Score: " + score;
+            textbox.text = "Apples: " + score;
         }
 
         if (score >= scoreToWin) 

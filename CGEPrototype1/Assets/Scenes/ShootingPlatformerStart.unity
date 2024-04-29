@@ -1346,8 +1346,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65
-  m_fontSizeBase: 65
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1412,7 +1412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 51, y: -296}
+  m_AnchoredPosition: {x: 81, y: -264}
   m_SizeDelta: {x: 449.7097, y: 105.91467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &190131455
@@ -2300,12 +2300,12 @@ PrefabInstance:
     - target: {fileID: 5216187847618085048, guid: cf9e06f48c7997f4a878994c05acc735,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -335
+      value: -319
       objectReference: {fileID: 0}
     - target: {fileID: 5216187847618085048, guid: cf9e06f48c7997f4a878994c05acc735,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 5216187847618085048, guid: cf9e06f48c7997f4a878994c05acc735,
         type: 3}
@@ -7854,7 +7854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthBar: {fileID: 1595674964}
-  knockbackForce: 5
+  knockbackForce: 7
   playerDeathEffect: {fileID: 8629020330556598743, guid: 71ed8438d9d611441a32b1ef3da561d0,
     type: 3}
   hitRecoveryTime: 0.2
@@ -7936,7 +7936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635335489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 112.92, y: 6.68, z: 10}
+  m_LocalPosition: {x: 111, y: 6.68, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1487838523}

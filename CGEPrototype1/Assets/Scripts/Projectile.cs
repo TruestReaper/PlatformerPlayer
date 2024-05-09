@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
         { 
             // call the TakeDamage function of the Enemy component
-            enemy.TakeDamage(damage); 
+            enemy.TakeDamage(damage);
         }
 
         // if the object that was hit is not the player

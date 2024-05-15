@@ -10,7 +10,7 @@ public class EnemyMoveWalkingChase : MonoBehaviour
 {
     public float chaseRange = 4f;
 
-    public float enemyMovementSpeed = 1.5f;
+    public float enemyMovementSpeed = 2f;
 
     // private references
 
@@ -121,15 +121,24 @@ public class EnemyMoveWalkingChase : MonoBehaviour
     }
     private void MoveTowardsPlayer(Vector2 playerDirection)
     {
+        Debug.Log("move towards start");
+
         rb.velocity = new Vector2(playerDirection.x * enemyMovementSpeed, rb.velocity.y);
 
         anim.SetBool("isMoving", true);
+        Debug.Log("move towards finish");
+
     }
 
     private void StopMoving()
     {
+        Debug.Log("stop moving start");
+
         rb.velocity = new Vector2(0, rb.velocity.y);
 
         anim.SetBool("isMoving", false);
+
+        Debug.Log("stop moving finish");
+
     }
 }

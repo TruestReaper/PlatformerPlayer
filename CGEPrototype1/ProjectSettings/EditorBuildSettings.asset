@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: dcf0ed04d19c487419162ffad12d1afe
+  - enabled: 1
+    path: Assets/Scenes/ShootingPlatformerFinish.unity
+    guid: 18dd79d736ee79846a8a586e7b5ccccb
   m_configObjects: {}

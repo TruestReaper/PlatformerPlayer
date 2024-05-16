@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShootingPlatformerFinish.unity
     guid: 18dd79d736ee79846a8a586e7b5ccccb
+  - enabled: 1
+    path: Assets/Scenes/CreditsScreen.unity
+    guid: 57b172ccb50acf74a91b9ddd4a87d408
   m_configObjects: {}

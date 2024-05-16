@@ -1403,7 +1403,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fdb4525f51f3b054f9aede6b68c40dd3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5045,6 +5045,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4000676028079528244, guid: d9af786ae054929458d2eb9d9a8dc607,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.1416912
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000676028079528244, guid: d9af786ae054929458d2eb9d9a8dc607,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07047963
+      objectReference: {fileID: 0}
     - target: {fileID: 4000676028079528245, guid: d9af786ae054929458d2eb9d9a8dc607,
         type: 3}
       propertyPath: EnemyDeathSound
@@ -5063,7 +5073,7 @@ PrefabInstance:
     - target: {fileID: 4000676028079528246, guid: d9af786ae054929458d2eb9d9a8dc607,
         type: 3}
       propertyPath: enemyMovementSpeed
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000676028407733750, guid: d9af786ae054929458d2eb9d9a8dc607,
         type: 3}

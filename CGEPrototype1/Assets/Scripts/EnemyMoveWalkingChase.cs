@@ -5,7 +5,6 @@ using UnityEngine;
 // require a RigidBody2D and an Animator on the enemy
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
-
 public class EnemyMoveWalkingChase : MonoBehaviour
 {
     public float chaseRange = 4f;
@@ -39,6 +38,7 @@ public class EnemyMoveWalkingChase : MonoBehaviour
         // Vector2 from the enemy to the player
         Vector2 playerDirection = playerTransform.position - transform.position;
 
+
         // distance the enemy from player
         float distanceToPlayer = playerDirection.magnitude;
 
@@ -63,7 +63,6 @@ public class EnemyMoveWalkingChase : MonoBehaviour
             {
                 MoveTowardsPlayer(playerDirection);
             }
-            // if there is no ground ahead of the enemy, stop moving
             else
             {
                 // stop moving if there is no ground ahead
@@ -99,6 +98,8 @@ public class EnemyMoveWalkingChase : MonoBehaviour
         // draw a line to visualize the raycast
         Debug.DrawRay(transform.position, Vector2.down + enemyFacingDirection, Color.red);
 
+        //Debug.Log("IsGroundAhead : " + ((hit.collider != null).ToString()));
+
         // Return true if ground is detected
         return hit.collider != null;
     }
@@ -122,6 +123,7 @@ public class EnemyMoveWalkingChase : MonoBehaviour
     private void MoveTowardsPlayer(Vector2 playerDirection)
     {
         Debug.Log("move towards start");
+        Debug.DrawRay(transform.position, playerDirection, Color.green);
 
         rb.velocity = new Vector2(playerDirection.x * enemyMovementSpeed, rb.velocity.y);
 

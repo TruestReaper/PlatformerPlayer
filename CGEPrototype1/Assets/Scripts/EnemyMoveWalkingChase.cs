@@ -27,8 +27,13 @@ public class EnemyMoveWalkingChase : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         anim = GetComponent<Animator>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        /*if (playerTransform == null)
+        {
+            Debug.LogError("Player transform not found. Ensure player has 'Player' tag.");
+        }*/
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -41,6 +46,8 @@ public class EnemyMoveWalkingChase : MonoBehaviour
 
         // distance the enemy from player
         float distanceToPlayer = playerDirection.magnitude;
+
+        Debug.Log("Distance to Player: " + distanceToPlayer);
 
         if (distanceToPlayer <= chaseRange)
         
@@ -88,6 +95,7 @@ public class EnemyMoveWalkingChase : MonoBehaviour
 
         // LayerMask for the ground
         LayerMask groundLayer = LayerMask.GetMask("Ground");
+        Debug.Log("Ground layer: " + groundLayer);
 
         // determine which direction the enemy is facing
         Vector2 enemyFacingDirection = (sr.flipX == false) ? Vector2.left : Vector2.right;
@@ -98,7 +106,7 @@ public class EnemyMoveWalkingChase : MonoBehaviour
         // draw a line to visualize the raycast
         Debug.DrawRay(transform.position, Vector2.down + enemyFacingDirection, Color.red);
 
-        //Debug.Log("IsGroundAhead : " + ((hit.collider != null).ToString()));
+        Debug.Log("IsGroundAhead : " + ((hit.collider != null)));
 
         // Return true if ground is detected
         return hit.collider != null;
@@ -112,13 +120,13 @@ public class EnemyMoveWalkingChase : MonoBehaviour
             // transform.rotation = Quaternion.Euler(0, 0, 0);
             sr.flipX = false;
         }
-        // if the player is to the left of enemy
         else
         {
             // face left
             // transform.rotation = Quaternion.Euler(0, 180, 0); 
             sr.flipX = true;
         }
+        Debug.Log("Facing player: " + (sr.flipX ? "left" : "right"));
     }
     private void MoveTowardsPlayer(Vector2 playerDirection)
     {
